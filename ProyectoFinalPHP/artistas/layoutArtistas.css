@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration-color: gold;
+	text-decoration-thickness: 2px;
+	text-decoration-line: none;
+}
+
+body {
+	background-color: whitesmoke;
+	font-family: Arial, sans-serif;
+}
+
+header {
+	background-color: #333;
+	color: greenyellow;
+	text-align: center;
+	padding: 20px 0;
+	height: 20vh; /* Ocupa el 20% de la página */
+	align-content: center;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	font-style: oblique;
+}
+
+.container {
+	padding: 20px;
+	width: 100%;
+	align-content: center;
+}
+
+.photo-row {
+	margin-top: 30px;
+	display: flex; /* Esto hace que las cajas de fotos estén en una fila horizontal */
+	justify-content: space-around; /* Distribuye las fotos uniformemente */
+}
+
+.photo-box {
+	width: 30%; /* Ajusta el tamaño de las cajas de fotos para que quepan 3 en una fila */
+	text-align: center; /* Centra el contenido dentro de cada caja */
+}
+
+.photo-box img {
+	border: 2px solid gold;
+	width: 100%; /* Mantén el ancho al 100% del contenedor */
+	height: 600px; /* Asigna una altura fija a todas las imágenes */
+	object-fit: cover; /* Asegura que las imágenes mantengan proporción, pero se ajusten al tamaño */
+	border-radius: 8px;
+}
+
+.photo-box p {
+	color: red;
+	font-family: cursive;
+	margin-bottom: 10px;
+	font-weight: bold;
+	text-align: center; /* Centra el texto */
+}
+
+.photo-box p:hover {
+	color: gold;
+}
+
