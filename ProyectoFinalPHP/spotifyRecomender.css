@@ -1,0 +1,123 @@
+html,
+body {
+	height: 100%; /* Ocupa toda la altura de la ventana */
+	overflow: hidden; /* Oculta el scroll */
+	margin: 0; /* Elimina el margen predeterminado */
+	padding: 0; /* Elimina el padding predeterminado */
+}
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #4caf50;
+	color: white;
+	text-align: center;
+	padding: 10px 0;
+}
+
+header h1 {
+	text-decoration: wavy;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: xx-large;
+	font-variant: small-caps;
+}
+.container {
+	height: 100%; /* Asegúrate de que el contenedor principal ocupe toda la altura */
+	display: flex;
+	flex-direction: column; /* Permite organizar el contenido de manera vertical */
+	padding: 5px;
+}
+
+.row {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 20px;
+	width: 100%; /* Asegura que la fila ocupe todo el ancho */
+}
+
+.image-card {
+	position: relative;
+	text-align: center;
+	flex: 1; /* Permite que las tarjetas ocupen el mismo espacio */
+	margin: 0 10px; /* Espaciado entre tarjetas */
+}
+
+.image-card img {
+	width: 100%;
+	height: 400px;
+	object-fit: cover; /* Asegura que las imágenes mantengan proporción, pero se ajusten al tamaño */
+	border-radius: 10px;
+	border: 3px solid #2c3e50;
+}
+
+.image-card p {
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.buttons {
+	display: flex;
+	position: absolute;
+	top: 30px;
+	right: 20px;
+	flex-wrap: nowrap;
+	gap: 10px;
+}
+
+.buttons:hover {
+	background-color: #4caf50;
+	color: gold;
+}
+
+.image-card p:hover {
+	background-color: #4caf50;
+	color: gold;
+}
+
+.image-card h4 {
+	text-align: center;
+}
+
+form button {
+	position: relative;
+	height: 45px;
+	border: 0;
+	border-radius: 50px;
+	padding: 10px;
+}
+
+form .botonRecomendaciones {
+	background-color: #03a9f4;
+	border-radius: 2;
+	z-index: 2;
+}
+
+form .botonLogin {
+	background-color: #93c9e2;
+	margin-left: -40px; /* Superposición hacia la izquierda */
+	z-index: 1;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	width: 100px;
+	padding-left: 40px;
+}
+
+form .botonLogin:hover {
+	background-color: #009ce4;
+	color: black;
+}
+
+form .botonRecomendaciones:hover {
+	background-color: #009ce4;
+}
+

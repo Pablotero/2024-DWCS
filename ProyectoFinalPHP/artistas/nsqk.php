@@ -23,7 +23,7 @@
             </div>
             <div class="photo-box">
                 <a href="https://open.spotify.com/intl-es/track/4957L0Loaz27sUPgBlEeOb?si=876aa579f345420a"><p>ATP: LOS ALPES</p></a>
-                <img src="../Imagenes/NSQk/atp.jpeg" alt="Foto 3">
+                <img src="../Imagenes/NSQK/atp.jpeg" alt="Foto 3">
             </div>
         </div>
     </section>
