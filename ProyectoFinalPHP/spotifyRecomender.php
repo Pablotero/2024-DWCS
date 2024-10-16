@@ -1,4 +1,11 @@
 <?php
+    session_start();
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $_SESSION['nombre'] = "sesionIniciada";
+    }else{
+        session_unset();    
+        session_destroy();
+    }
     $artistas = [
         ["nombre"=>"RAUW ALEJANDRO", "imagen"=>"Imagenes/Rauw/Rauw.jpeg", "pagina"=>"artistas/rauw.php"],
         ["nombre"=>"MORA", "imagen"=>"Imagenes/Mora/Mora.jpeg", "pagina"=>"artistas/mora.php"],
@@ -11,7 +18,15 @@
     ];
 
     $usuarios = [
-        0 => ["nombre"=>"PabloOtero", "cancion1"=>"<a href \" https://open.spotify.com/intl-es/track/3Bp0XlRQv0URQMM6ABKhEE?si=6ed95c0d4dda4f11 \" > <p> DATA: VOLVER </p </a>", "cancion2"=>"<a href \" https://open.spotify.com/intl-es/track/73g6RENTgyeOn8vD04F2MT?si=ca7b44606bf14837 \" > <p> ATT. : NO QUIERO PELEAR (YOUNG MIKO ft. ELENA ROSE) </p </a>", "cancion3"=>"<a href \" https://open.spotify.com/intl-es/track/6LgZURTxqvwE5c6i5Wxe0g?si=3f64a868e2e44bb7 \" > <p> EL NIÑO DE LOS CORAZONES ROTOS: POEMA A TUS PRONLEMAS (LEGALLY) </p </a>" ]
+        ["nombre"=>"PabloOtero", "cancion1"=>"<a href =\" https://open.spotify.com/intl-es/track/3Bp0XlRQv0URQMM6ABKhEE?si=6ed95c0d4dda4f11 \" > <h5> DATA: VOLVER </h5> </a>", "cancion2"=>"<a href =\" https://open.spotify.com/intl-es/track/73g6RENTgyeOn8vD04F2MT?si=ca7b44606bf14837 \" > <h5> ATT. : NO QUIERO PELEAR (YOUNG MIKO ft. ELENA ROSE) </h5> </a>", "cancion3"=>"<a href= \" https://open.spotify.com/intl-es/track/6LgZURTxqvwE5c6i5Wxe0g?si=3f64a868e2e44bb7 \" > <h5> EL NIÑO DE LOS CORAZONES ROTOS: POEMA A TUS PRONLEMAS (LEGALLY) </h5> </a>" ],
+        ["nombre"=>"JuanLorenzo", "cancion1"=>"<a href =\" https://open.spotify.com/intl-es/track/3CA9pLiwRIGtUBiMjbZmRw?si=be65d3d557eb4b6b \" > <h5> SCORPION: NICE FOR WHAT </h5> </a>", "cancion2"=>"<a href= \" https://open.spotify.com/intl-es/track/73g6RENTgyeOn8vD04F2MT?si=ca7b44606bf14837 \" > <h5> AFRODISÍACO: DILE A ÉL (RAUW ALEJANDRO) </h5> </a>", "cancion3"=>"<a href= \" https://open.spotify.com/intl-es/track/13Tbv4nflNxg9kYBIbJnd9?si=69b9b1e96c404010 \" > <h5> THE COLLEGE DROPOUT: THROUGH THE WIRE </h5> </a>" ],
+        ["nombre"=>"IzanSantos", "cancion1"=>"<a href =\" https://open.spotify.com/intl-es/track/3Bp0XlRQv0URQMM6ABKhEE?si=6ed95c0d4dda4f11 \" > <h5> DATA: VOLVER </h5> </a>", "cancion2"=>"<a href =\" https://open.spotify.com/intl-es/track/73g6RENTgyeOn8vD04F2MT?si=ca7b44606bf14837 \" > <h5> ATT. : NO QUIERO PELEAR (YOUNG MIKO ft. ELENA ROSE) </h5> </a>", "cancion3"=>"<a href0 \" https://open.spotify.com/intl-es/track/6LgZURTxqvwE5c6i5Wxe0g?si=3f64a868e2e44bb7 \" > <h5> EL NIÑO DE LOS CORAZONES ROTOS: POEMA A TUS PRONLEMAS (LEGALLY) </h5> </a>" ],
+        ["nombre"=>"DanielFortuño", "cancion1"=>"<a href =\" https://open.spotify.com/intl-es/track/3Bp0XlRQv0URQMM6ABKhEE?si=6ed95c0d4dda4f11 \" > <h5> DATA: VOLVER </h5> </a>", "cancion2"=>"<a href =\" https://open.spotify.com/intl-es/track/73g6RENTgyeOn8vD04F2MT?si=ca7b44606bf14837 \" > <h5> ATT. : NO QUIERO PELEAR (YOUNG MIKO ft. ELENA ROSE) </h5> </a>", "cancion3"=>"<a href= \" https://open.spotify.com/intl-es/track/6LgZURTxqvwE5c6i5Wxe0g?si=3f64a868e2e44bb7 \" > <h5> EL NIÑO DE LOS CORAZONES ROTOS: POEMA A TUS PRONLEMAS (LEGALLY) </h5> </a>" ],
+        ["nombre"=>"JorgeCrespo", "cancion1"=>"<a href =\" https://open.spotify.com/intl-es/track/3Bp0XlRQv0URQMM6ABKhEE?si=6ed95c0d4dda4f11 \" > <h5> DATA: VOLVER </h5> </a>", "cancion2"=>"<a href =\" https://open.spotify.com/intl-es/track/73g6RENTgyeOn8vD04F2MT?si=ca7b44606bf14837 \" > <h5> ATT. : NO QUIERO PELEAR (YOUNG MIKO ft. ELENA ROSE) </h5> </a>", "cancion3"=>"<a href= \" https://open.spotify.com/intl-es/track/6LgZURTxqvwE5c6i5Wxe0g?si=3f64a868e2e44bb7 \" > <h5> EL NIÑO DE LOS CORAZONES ROTOS: POEMA A TUS PRONLEMAS (LEGALLY) </h5> </a>" ],
+        ["nombre"=>"FidelRiobó", "cancion1"=>"<a href =\" https://open.spotify.com/intl-es/track/3Bp0XlRQv0URQMM6ABKhEE?si=6ed95c0d4dda4f11 \" > <h5> DATA: VOLVER </h5> </a>", "cancion2"=>"<a href =\" https://open.spotify.com/intl-es/track/73g6RENTgyeOn8vD04F2MT?si=ca7b44606bf14837 \" > <h5> ATT. : NO QUIERO PELEAR (YOUNG MIKO ft. ELENA ROSE) </h5> </a>", "cancion3"=>"<a href= \" https://open.spotify.com/intl-es/track/6LgZURTxqvwE5c6i5Wxe0g?si=3f64a868e2e44bb7 \" > <h5> EL NIÑO DE LOS CORAZONES ROTOS: POEMA A TUS PRONLEMAS (LEGALLY) </h5> </a>" ],
+        ["nombre"=>"CameronGarcía", "cancion1"=>"<a href =\" https://open.spotify.com/intl-es/track/3Bp0XlRQv0URQMM6ABKhEE?si=6ed95c0d4dda4f11 \" > <h5> DATA: VOLVER </h5> </a>", "cancion2"=>"<a href =\" https://open.spotify.com/intl-es/track/73g6RENTgyeOn8vD04F2MT?si=ca7b44606bf14837 \" > <h5> ATT. : NO QUIERO PELEAR (YOUNG MIKO ft. ELENA ROSE) </h5> </a>", "cancion3"=>"<a href= \" https://open.spotify.com/intl-es/track/6LgZURTxqvwE5c6i5Wxe0g?si=3f64a868e2e44bb7 \" > <h5> EL NIÑO DE LOS CORAZONES ROTOS: POEMA A TUS PRONLEMAS (LEGALLY) </h5> </a>" ],
+        ["nombre"=>"JoséLorenzo", "cancion1"=>"<a href =\" https://open.spotify.com/intl-es/track/3Bp0XlRQv0URQMM6ABKhEE?si=6ed95c0d4dda4f11 \" > <h5> DATA: VOLVER </h5> </a>", "cancion2"=>"<a href =\" https://open.spotify.com/intl-es/track/73g6RENTgyeOn8vD04F2MT?si=ca7b44606bf14837 \" > <h5> ATT. : NO QUIERO PELEAR (YOUNG MIKO ft. ELENA ROSE) </h5> </a>", "cancion3"=>"<a href= \" https://open.spotify.com/intl-es/track/6LgZURTxqvwE5c6i5Wxe0g?si=3f64a868e2e44bb7 \" > <h5> EL NIÑO DE LOS CORAZONES ROTOS: POEMA A TUS PRONLEMAS (LEGALLY) </h5> </a>" ],
+        ["nombre"=>"PabloMartín", "cancion1"=>"<a href =\" https://open.spotify.com/intl-es/track/3Bp0XlRQv0URQMM6ABKhEE?si=6ed95c0d4dda4f11 \" > <h5> DATA: VOLVER </h5> </a>", "cancion2"=>"<a href =\" https://open.spotify.com/intl-es/track/73g6RENTgyeOn8vD04F2MT?si=ca7b44606bf14837 \" > <h5> ATT. : NO QUIERO PELEAR (YOUNG MIKO ft. ELENA ROSE) </h5> </a>", "cancion3"=>"<a href= \" https://open.spotify.com/intl-es/track/6LgZURTxqvwE5c6i5Wxe0g?si=3f64a868e2e44bb7 \" > <h5> EL NIÑO DE LOS CORAZONES ROTOS: POEMA A TUS PRONLEMAS (LEGALLY) </h5> </a>" ],
     ]
 ?>
 
@@ -82,18 +97,18 @@
         <!-- DIV DEDICADO AL USUSARIO Y LOGIN -->
             
             <?php
-                if (isset($_SESSION)) {
+                if (isset($_SESSION['nombre'])) {
 
                     $usuario = $usuarios[random_int(0, count($usuarios) - 1)]
             ?>
-                    <div class="image-card">
+                    <div  class="image-card">
                         <h4><?php echo $usuario["nombre"]?></h4>
-                        <?php echo $usuario["cancion1"].$usuario["cancion2"].$usuario["cancion3"] ?>
+                        <?php echo $usuario["cancion1"]."<br>".$usuario["cancion2"]."<br>".$usuario["cancion3"] ?>
                     </div>
             <?php
                 }else{
             ?>
-                    <div class="image-card">
+                    <div class="image-card" >
                         <img src="Imagenes/Mix/FotoUsuario.png" alt="">
                         <a href=""> <p>INICIA SESION PARA ACCEDER</p> </a>
                     </div>
@@ -114,72 +129,21 @@
 
     </div>
     <div class="buttons">
-        <form action="recomendacionesUsuario.php" method="POST" >
-            <button class="botonRecomendaciones" type="submit" name="accion" value="misRecomendaciones">MIS RECOMENDACIONES</button>
+        <form action="paginasDerivadas/logout.php" method="post">
+            <button class="botonLogout" type="submit" name="accion" value="logout">LOG-OUT</button>
         </form>
-        <form action="" method="post" >
+        <form action="paginasDerivadas/recomendacionesUsuario.php" method="POST" >
+            <button class="botonRecomendaciones" type="submit" name="accion" value="misRecomendaciones">TUS RECOMENDACIONES</button>
+        </form>
+
+        <form action="paginasDerivadas/login.php" method="post" >
             <button class="botonLogin" type="submit" name="accion" value="login">LOG-IN</button>
         </form>
     </div>
-
-    <?php
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            session_start();
-    ?>
-            <div class="formLogin">
-                <form action="">
-                    <?php  session_name()?>
-                    Usuario: <input type="text">
-                    Contraseña: <input type="password">
-                </form>
-            </div>
-    <?php
-        }
-    ?>
+       
+        
 </body>
 </html>
 
 
-
-<!--
-version: "3.1"
-services:
-    db:
-        image: mysql
-        ports: 
-            - "3306:3306"
-        command: --default-authentication-plugin=mysql_native_password
-        environment:
-            MYSQL_DATABASE: dbname
-            MYSQL_USER: root
-            MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
-        volumes:
-            - ./dump:/docker-entrypoint-initdb.d
-            - ./conf:/etc/mysql/conf.d
-            - persistent:/var/lib/mysql
-        networks:
-            - default
-    www:
-        build: .
-        ports: 
-            - "80:80"
-        volumes:
-            - ./www:/var/www/html
-        links:
-            - db
-        networks:
-            - default
-    phpmyadmin:
-        image: phpmyadmin/phpmyadmin
-        links: 
-            - db:db
-        ports:
-            - 8000:80
-        environment:
-            MYSQL_USER: root
-            MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
-volumes:
-    persistent:
 

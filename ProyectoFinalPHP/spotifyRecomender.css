@@ -99,25 +99,40 @@ form button {
 form .botonRecomendaciones {
 	background-color: #03a9f4;
 	border-radius: 2;
-	z-index: 2;
+	z-index: 3;
 }
 
 form .botonLogin {
 	background-color: #93c9e2;
 	margin-left: -40px; /* Superposición hacia la izquierda */
-	z-index: 1;
+	z-index: 2;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 	width: 100px;
 	padding-left: 40px;
 }
 
-form .botonLogin:hover {
+.botonLogout:hover {
+	background-color: #009ce4;
+	color: black;
+}
+form .boton *:hover {
 	background-color: #009ce4;
 	color: black;
 }
 
 form .botonRecomendaciones:hover {
 	background-color: #009ce4;
+}
+
+.image-card h5 {
+	text-align: left;
+	padding: 5px;
+	color: #4caf50;
+}
+
+.image-card a {
+	text-decoration: none;
+	color: #4caf50;
 }
 
