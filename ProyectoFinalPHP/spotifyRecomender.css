@@ -112,14 +112,6 @@ form .botonLogin {
 	padding-left: 40px;
 }
 
-.botonLogout:hover {
-	background-color: #009ce4;
-	color: black;
-}
-form .boton *:hover {
-	background-color: #009ce4;
-	color: black;
-}
 
 form .botonRecomendaciones:hover {
 	background-color: #009ce4;
@@ -134,5 +126,17 @@ form .botonRecomendaciones:hover {
 .image-card a {
 	text-decoration: none;
 	color: #4caf50;
+}
+
+.botonLogout{
+	background-color:#03a9f4 ;
+	padding: 10px;
+	position: relative;
+	width: 100px;
+	visibility: visible;
+}
+
+.botonLogout:hover{
+	background-color: #009ce4;
 }
 

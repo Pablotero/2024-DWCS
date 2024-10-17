@@ -39,3 +39,13 @@ header {
 	text-align: center;
 }
 
+.botones{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.botones form {
+	padding-left: 10px;
+}
+
+

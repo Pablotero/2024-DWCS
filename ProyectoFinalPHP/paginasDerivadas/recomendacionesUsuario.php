@@ -1,8 +1,10 @@
 <?php
-    session_start(); // Iniciar la sesión siempre que se maneje datos de sesión
+    session_start();
+    $recomendacionesUsuario = [];
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Guardar las recomendaciones del usuario en la sesión
+        
+
         $username = $_POST['username'];
         $song1 = $_POST['song1'];
         $song2 = $_POST['song2'];
@@ -15,22 +17,21 @@
             "cancion3" => $song3
         ];
 
-        // Almacenar los datos en la variable
-        $datosUsuario = [$_SESSION['datosUsuario']];
+        array_push($recomendacionesUsuario, $_SESSION['datosUsuario']);
+        $_SESSION["recomendacionesGuardadas"] = $recomendacionesUsuario;
         
     } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
-        // Verificar si ya hay datos en la sesión
-        if (isset($_SESSION['datosUsuario'])) {
-            $datosUsuario = [$_SESSION['datosUsuario']];
-        }
+        
+        $recomendacionesUsuario = $_SESSION["recomendacionesGuardadas"];
 
-        // Nuevas recomendaciones añadidas mediante GET
+
+
         if (isset($_GET['song1'], $_GET['song2'], $_GET['song3'])) {
             $nuevaRecomendacion1 = $_GET['song1'];
             $nuevaRecomendacion2 = $_GET['song2'];
             $nuevaRecomendacion3 = $_GET['song3'];
 
-            // Añadir nuevas recomendaciones al array existente
+
             $nuevaRecomendacionFinal = [
                 "nombre" => $_SESSION['datosUsuario']['nombre'],
                 "cancion1" => $nuevaRecomendacion1,
@@ -38,10 +39,16 @@
                 "cancion3" => $nuevaRecomendacion3
             ];
 
-            // Añadir las nuevas recomendaciones al array
-            $datosUsuario[] += $nuevaRecomendacionFinal;
-        }
+
+            array_push($recomendacionesUsuario,$nuevaRecomendacionFinal);
+            $_SESSION["recomendacionesGuardadas"] = $recomendacionesUsuario;
+    }else{
+        $recomendacionesUsuario = $_SESSION['recomendacionesGuardadas'];
     }
+
+        
+    }
+    $_SESSION["recomendacionesGuardadas"] = $recomendacionesUsuario;
 ?>
 
 <!DOCTYPE html>
@@ -56,8 +63,8 @@
     <header>TUS RECOMENDACIONES</header>
     <div class="container">
         <?php
-            if (isset($datosUsuario)) {
-                foreach ($datosUsuario as $usuario) {
+            if (isset($recomendacionesUsuario)) {
+                foreach ($recomendacionesUsuario as $usuario) {
         ?>
                     <div class="bloqueRecomendacion">
                         <h3>USUARIO: <?php echo htmlspecialchars($usuario['nombre']); ?></h3>

@@ -110,7 +110,7 @@
             ?>
                     <div class="image-card" >
                         <img src="Imagenes/Mix/FotoUsuario.png" alt="">
-                        <a href=""> <p>INICIA SESION PARA ACCEDER</p> </a>
+                        <a href="paginasDerivadas/login.php"> <p>INICIAR SESION</p> </a>
                     </div>
             <?php
                 }
@@ -132,9 +132,24 @@
         <form action="paginasDerivadas/logout.php" method="post">
             <button class="botonLogout" type="submit" name="accion" value="logout">LOG-OUT</button>
         </form>
-        <form action="paginasDerivadas/recomendacionesUsuario.php" method="POST" >
-            <button class="botonRecomendaciones" type="submit" name="accion" value="misRecomendaciones">TUS RECOMENDACIONES</button>
-        </form>
+
+        <?php
+            if (isset($_SESSION['nombre'])) {
+        ?>
+                <form action="paginasDerivadas/recomendacionesUsuario.php" method="GET" >
+                    <button class="botonRecomendaciones" type="submit" name="accion" value="misRecomendaciones">TUS RECOMENDACIONES</button>
+                </form>
+
+        <?php 
+            }else {
+        ?>
+                <form action="" method="GET" >
+                    <button class="botonRecomendaciones" type="submit" name="accion" value="misRecomendaciones">TUS RECOMENDACIONES</button>
+                </form>
+        <?php
+                    
+            }
+        ?>
 
         <form action="paginasDerivadas/login.php" method="post" >
             <button class="botonLogin" type="submit" name="accion" value="login">LOG-IN</button>
