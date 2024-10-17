@@ -8,6 +8,9 @@
 </head>
 <body>
     <header>
+        <div class="home">
+            <a href="../spotifyRecomender.php">HOME</a>
+        </div>
         <h1>ALVARO DIAZ</h1>
     </header>
 

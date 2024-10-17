@@ -8,7 +8,11 @@
 </head>
 <body>
     <header>
+        <div class="home">
+            <a href="../spotifyRecomender.php">HOME</a>
+        </div>
         <h1>JHAYCO</h1>
+        
     </header>
 
     <section class="container">

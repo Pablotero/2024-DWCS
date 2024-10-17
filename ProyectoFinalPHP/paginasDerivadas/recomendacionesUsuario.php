@@ -45,8 +45,6 @@
     }else{
         $recomendacionesUsuario = $_SESSION['recomendacionesGuardadas'];
     }
-
-        
     }
     $_SESSION["recomendacionesGuardadas"] = $recomendacionesUsuario;
 ?>

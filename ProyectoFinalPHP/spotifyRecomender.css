@@ -1,9 +1,9 @@
 html,
 body {
-	height: 100%; /* Ocupa toda la altura de la ventana */
-	overflow: hidden; /* Oculta el scroll */
-	margin: 0; /* Elimina el margen predeterminado */
-	padding: 0; /* Elimina el padding predeterminado */
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -26,9 +26,10 @@ header h1 {
 	font-variant: small-caps;
 }
 .container {
-	height: 100%; /* Asegúrate de que el contenedor principal ocupe toda la altura */
+	background-color: whitesmoke;
+	height: 100%;
 	display: flex;
-	flex-direction: column; /* Permite organizar el contenido de manera vertical */
+	flex-direction: column;
 	padding: 5px;
 }
 
@@ -36,20 +37,20 @@ header h1 {
 	display: flex;
 	justify-content: space-around;
 	margin-bottom: 20px;
-	width: 100%; /* Asegura que la fila ocupe todo el ancho */
+	width: 100%;
 }
 
 .image-card {
 	position: relative;
 	text-align: center;
-	flex: 1; /* Permite que las tarjetas ocupen el mismo espacio */
-	margin: 0 10px; /* Espaciado entre tarjetas */
+	flex: 1;
+	margin: 0 10px;
 }
 
 .image-card img {
 	width: 100%;
 	height: 400px;
-	object-fit: cover; /* Asegura que las imágenes mantengan proporción, pero se ajusten al tamaño */
+	object-fit: cover;
 	border-radius: 10px;
 	border: 3px solid #2c3e50;
 }
@@ -104,7 +105,7 @@ form .botonRecomendaciones {
 
 form .botonLogin {
 	background-color: #93c9e2;
-	margin-left: -40px; /* Superposición hacia la izquierda */
+	margin-left: -40px;
 	z-index: 2;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
@@ -112,14 +113,13 @@ form .botonLogin {
 	padding-left: 40px;
 }
 
-
 form .botonRecomendaciones:hover {
 	background-color: #009ce4;
 }
 
-.image-card h5 {
-	text-align: left;
-	padding: 5px;
+.usuario-card h5 {
+	padding-left: 25px;
+	padding-top: 30px;
 	color: #4caf50;
 }
 
@@ -128,15 +128,32 @@ form .botonRecomendaciones:hover {
 	color: #4caf50;
 }
 
-.botonLogout{
-	background-color:#03a9f4 ;
+.botonLogout {
+	right: 1500%;
+	background-color: #03a9f4;
 	padding: 10px;
 	position: relative;
 	width: 100px;
 	visibility: visible;
 }
 
-.botonLogout:hover{
+.botonLogout:hover {
 	background-color: #009ce4;
+}
+
+.usuario-card h5:hover {
+	color: #009ce4;
+	font-size: medium;
+}
+
+.image-card .usuario-card {
+	border-radius: 10px;
+	border: 3px solid #2c3e50;
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+	align-content: center;
+	display: flex;
+	flex-direction: column;
 }
 
